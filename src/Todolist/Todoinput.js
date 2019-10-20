@@ -6,7 +6,7 @@ export default class Todoinput extends Component {
         if(e.key === "Enter") {
             this.props.handleChange(e.target.value)
             e.target.value = ''
-        } 
+        }
     }
     render() {
         return (<input className="searchtodo" type="text"

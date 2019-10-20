@@ -1,3 +1,107 @@
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #CDCDCD
+      }
+    .top{
+        height: 50px;
+        background: rgba(47, 47, 47, 0.945);
+        width: 100%;
+    }
+    .toptodo{
+        width: 100%;
+        margin: 0 auto;
+        font-weight: 500
+    }
+    .toplist{
+        float: left;
+        margin-top:9px;
+        margin-left:9px;
+        color: #DDD;
+        font-size: 25px;
+    }
+    .searchtodo{
+        float: right;
+        margin-right: 10px;
+        width: 60%;
+        height: 25px;
+        text-indent: 10px;
+        margin-top: 12px;
+        border-radius: 4px;
+        border: none;
+    }
+    .tiegen{
+        color: #666;
+        font-size: 15px;
+        text-align: center;
+    }
+    .clear{
+        color: #999;
+        cursor: pointer;
+    }
+    .doing{
+        margin: 0 auto;
+        width: 100%;
+        text-align: left;
+    }
+    .doinglist{
+        margin-left: 10px;
+        position: relative;
+    }
+    .listnum{
+        position: absolute;
+        right: 5px;
+        padding: 0 6px;
+        border-radius: 20px;
+        background: white;
+        line-height: 21px;
+        text-align: center;
+        font-size: 15px;
+    }
+    .todoi{
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 0 40px;
+        line-height: 35px;
+        background: white;
+        position: relative;
+        border-radius: 4px;
+        border-left: 6px solid #629A9C;
+    }
+    .todoif{
+        border-left-color: black;
+        opacity: 0.5;
+    }
+    .todoinput{
+        position: absolute;
+        margin-top: 5px;
+        margin-left: -30px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .tododate{
+        font-size: 10px;
+    }
+    .todospan{
+        position: absolute;
+        margin-top: -45px;
+        margin-left: 80%;
+        width: 12px;
+        height: 12px;
+        border-radius: 14px;
+        border: 6px solid #CCC;
+        background: #CCC;
+        line-height: 10px;
+        text-align: center;
+        color: red;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+    }
+}
+@media only screen and (min-width: 600px) {
 body {
     margin: 0;
     padding: 0;
@@ -75,6 +179,9 @@ body {
     height: 20px;
     cursor: pointer;
 }
+.tododate{
+    font-size: 10px;
+}
 .todospan{
     position: absolute;
     margin-top: -45px;
@@ -90,4 +197,5 @@ body {
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
+}
 }

@@ -2,19 +2,17 @@ import React, { Component } from 'react';
 import Todotitle from './Todotitle';
 import Todotop from './Todotop';
 
-export default class Todolist extends Component {
-  constructor() {
+export default class Todolist extends Component{
+  constructor(){
     super()
-    var aa = JSON.parse(localStorage.getItem('aa'))
     this.state = {
       todo: {
-        list:aa||[],
+        list:JSON.parse(localStorage.getItem('aa'))||[],
         delete: (id) => {
           this.setState(e => {
             let list = e.todo.list.filter(item =>id !== item.id);
             e.todo.list = list;
             localStorage.setItem('aa',JSON.stringify(list));
-            list=[...this.state.todo.list];
             return {
               list:JSON.parse(localStorage.getItem('aa'))
             }
@@ -39,21 +37,9 @@ export default class Todolist extends Component {
       }
     }
   }
-  componentDidMount(){
-    console.log((this.state.todo.list).length);
-    if((this.state.todo.list)==null){
-      this.state.todo.list.push([]);
-    }
-    // var aa = 
-    // console.log(aa);
-    // if((this.state.todo.list).length==""){
-
-    // }
-}
   add=(item) => {
     this.setState(e => {
-      let newTodo = e.todo
-      let list = Object.assign(newTodo.list)
+      let list = Object.assign(e.todo.list)
       list.push({
         text: item,
         id: new Date().getTime(),
@@ -61,8 +47,7 @@ export default class Todolist extends Component {
       })
       let arr = [...this.state.todo.list,item];
       localStorage.setItem('aa',JSON.stringify(arr))
-      newTodo.list = list;
-      list=[...this.state.todo.list,item]
+      e.todo.list = list;
       return {
         list:JSON.parse(localStorage.getItem('aa'))
       }
