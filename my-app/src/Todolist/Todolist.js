@@ -8,13 +8,12 @@ export default class Todolist extends Component {
     var aa = JSON.parse(localStorage.getItem('aa'))
     this.state = {
       todo: {
-        list:aa, 
+        list:aa||[],
         delete: (id) => {
           this.setState(e => {
             let list = e.todo.list.filter(item =>id !== item.id);
             e.todo.list = list;
             localStorage.setItem('aa',JSON.stringify(list));
-            
             list=[...this.state.todo.list];
             return {
               list:JSON.parse(localStorage.getItem('aa'))
@@ -40,6 +39,17 @@ export default class Todolist extends Component {
       }
     }
   }
+  componentDidMount(){
+    console.log((this.state.todo.list).length);
+    if((this.state.todo.list)==null){
+      this.state.todo.list.push([]);
+    }
+    // var aa = 
+    // console.log(aa);
+    // if((this.state.todo.list).length==""){
+
+    // }
+}
   add=(item) => {
     this.setState(e => {
       let newTodo = e.todo
